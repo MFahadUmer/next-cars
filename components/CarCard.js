@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import CustomButton from './CustomButton';
 import { calculateCarRent } from '@/utils';
+import CarDetails from './CarDetails';
 
 const CarCard = ({ car }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,13 @@ const CarCard = ({ car }) => {
           <span className="self-start text-[14px] font-semibold">/day</span>
         </p>
         <div className="relative w-full h-40 my-3 object-contain">
-          <Image src={'/hero.png'} alt="car model" fill priority />
+          <Image
+            src={'/hero.png'}
+            alt="car model"
+            fill
+            priority
+            className="object-contain"
+          />
         </div>
       </div>
       <div className="relative flex w-full mt-2">
@@ -55,6 +62,13 @@ const CarCard = ({ car }) => {
           />
         </div>
       </div>
+      {isOpen && (
+        <CarDetails
+          isOpen={isOpen}
+          closeModal={() => setIsOpen(false)}
+          car={car}
+        />
+      )}
     </div>
   );
 };
