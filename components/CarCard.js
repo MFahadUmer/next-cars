@@ -20,15 +20,15 @@ const CarCard = ({ car }) => {
           {carRent}
           <span className="self-start text-[14px] font-semibold">/day</span>
         </p>
-        <div className="relative w-full h-40 my-3 object-contain">
-          <Image
-            src={generateCarImageUrl(car)}
-            alt="car model"
-            fill
-            priority
-            className="object-contain"
-          />
-        </div>
+      </div>
+      <div className="relative w-full h-40 my-3">
+        <Image
+          src={generateCarImageUrl(car)}
+          alt="car model"
+          fill
+          priority
+          className="object-contain"
+        />
       </div>
       <div className="relative flex w-full mt-2">
         <div className="flex group-hover:invisible w-full justify-between text-gray">
